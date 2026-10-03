@@ -2189,3 +2189,1515 @@ footer {
     left: -30px;
   }
 }
+
+/* ==================================================
+   DEFECT CLASSIFICATION PROJECT
+================================================== */
+
+.project-card.project-wide {
+  grid-column: 1 / -1;
+}
+
+
+/* ==================================================
+   SLIDER
+================================================== */
+
+.defect-slider {
+  position: relative;
+
+  width: 100%;
+height: clamp(320px, 35vw, 460px);
+  margin: 28px 0 42px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+  border-radius: 16px;
+
+  background: #080808;
+}
+
+
+/* Individual slides */
+
+.defect-slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+
+/* Active slide */
+
+.defect-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Images */
+
+.defect-slide img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #080808;
+}
+
+
+/* Dark gradient */
+
+.defect-slide::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.25) 28%,
+      transparent 55%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==================================================
+   CAPTION
+================================================== */
+
+.defect-caption {
+  position: absolute;
+
+  left: 28px;
+  bottom: 26px;
+
+  z-index: 3;
+}
+
+
+.defect-caption span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--accent);
+
+  font-family: var(--mono);
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.defect-caption p {
+  margin: 0;
+
+  color: #fff;
+
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+
+/* ==================================================
+   ARROWS
+================================================== */
+
+.defect-slider-btn {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  background: rgba(10, 10, 10, 0.75);
+
+  color: #fff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s ease;
+}
+
+
+.defect-slider-btn.prev {
+  left: 22px;
+}
+
+
+.defect-slider-btn.next {
+  right: 22px;
+}
+
+
+.defect-slider-btn:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: #000;
+}
+
+
+/* ==================================================
+   DOTS
+================================================== */
+
+.defect-dots {
+  position: absolute;
+
+  right: 28px;
+  bottom: 28px;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.defect-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.4);
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.defect-dot.active {
+  width: 25px;
+
+  background: var(--accent);
+}
+
+
+/* ==================================================
+   PROJECT CONTENT
+================================================== */
+
+.defect-project-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 70px;
+}
+
+
+.defect-project-intro h3 {
+  margin: 0 0 18px;
+
+  color: var(--text);
+
+  font-size: clamp(28px, 3vw, 42px);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+
+.defect-lead {
+  max-width: 480px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+.defect-project-description p {
+  margin: 0 0 18px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 12.5px;
+
+  line-height: 1.9;
+}
+
+
+.defect-project-description strong {
+  color: var(--text);
+
+  font-weight: 500;
+}
+
+
+/* ==================================================
+   HIGHLIGHTS
+================================================== */
+
+.defect-highlights {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  margin: 38px 0 28px;
+
+  border-top: 1px solid var(--line);
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.defect-highlights > div {
+  padding: 22px 18px;
+
+  border-right: 1px solid var(--line);
+}
+
+
+.defect-highlights > div:last-child {
+  border-right: 0;
+}
+
+
+.defect-highlights span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+.defect-highlights strong {
+  color: var(--text);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .defect-slider {
+     height: 380px;
+  }
+
+
+  .defect-project-content {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  .defect-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .defect-highlights > div:nth-child(2) {
+    border-right: 0;
+  }
+
+
+  .defect-highlights > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .defect-slider {
+    height: 320px;
+
+    margin-bottom: 30px;
+  }
+  .defect-slider {
+  position: relative;
+  width: 100%;
+  height: clamp(320px, 35vw, 460px);
+
+
+  .defect-slider-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .defect-slider-btn.prev {
+    left: 12px;
+  }
+
+
+  .defect-slider-btn.next {
+    right: 12px;
+  }
+
+
+  .defect-caption {
+    left: 18px;
+
+    bottom: 18px;
+  }
+
+
+  .defect-dots {
+    right: 18px;
+
+    bottom: 20px;
+  }
+
+
+  .defect-project-content {
+    gap: 20px;
+  }
+
+
+  .defect-highlights {
+    grid-template-columns: 1fr;
+  }
+
+
+  .defect-highlights > div {
+    border-right: 0;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+
+  .defect-highlights > div:last-child {
+    border-bottom: 0;
+  }
+
+}}
+/* ==================================================
+   RISK ASSESSMENT PROJECT
+================================================== */
+
+.risk-slider {
+  position: relative;
+
+  width: 100%;
+
+  height: clamp(320px, 35vw, 460px);
+
+  margin: 28px 0 42px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  border-radius: 16px;
+
+  background: #080808;
+}
+
+
+/* Slides */
+
+.risk-slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease;
+}
+
+
+.risk-slide.active {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* Images */
+
+.risk-slide img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #080808;
+}
+
+
+/* Bottom gradient */
+
+.risk-slide::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.25) 28%,
+      transparent 55%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==================================================
+   CAPTION
+================================================== */
+
+.risk-caption {
+  position: absolute;
+
+  left: 28px;
+
+  bottom: 26px;
+
+  z-index: 3;
+}
+
+
+.risk-caption span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--accent);
+
+  font-family: var(--mono);
+
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.risk-caption p {
+  margin: 0;
+
+  color: #fff;
+
+  font-family: var(--mono);
+
+  font-size: 12px;
+}
+
+
+/* ==================================================
+   ARROWS
+================================================== */
+
+.risk-slider-btn {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  background: rgba(10, 10, 10, 0.75);
+
+  color: #fff;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s ease;
+}
+
+
+.risk-slider-btn.prev {
+  left: 22px;
+}
+
+
+.risk-slider-btn.next {
+  right: 22px;
+}
+
+
+.risk-slider-btn:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: #000;
+}
+
+
+/* ==================================================
+   DOTS
+================================================== */
+
+.risk-dots {
+  position: absolute;
+
+  right: 28px;
+
+  bottom: 28px;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.risk-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.4);
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.risk-dot.active {
+  width: 25px;
+
+  background: var(--accent);
+}
+
+
+/* ==================================================
+   PROJECT CONTENT
+================================================== */
+
+.risk-project-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 70px;
+}
+
+
+.risk-project-intro h3 {
+  margin: 0 0 18px;
+
+  color: var(--text);
+
+  font-size: clamp(28px, 3vw, 42px);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+}
+
+
+.risk-lead {
+  max-width: 480px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 13px;
+
+  line-height: 1.85;
+}
+
+
+.risk-project-description p {
+  margin: 0 0 18px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 12.5px;
+
+  line-height: 1.9;
+}
+
+
+.risk-project-description strong {
+  color: var(--text);
+
+  font-weight: 500;
+}
+
+
+/* ==================================================
+   HIGHLIGHTS
+================================================== */
+
+.risk-highlights {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  margin: 38px 0 28px;
+
+  border-top: 1px solid var(--line);
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+.risk-highlights > div {
+  padding: 22px 18px;
+
+  border-right: 1px solid var(--line);
+}
+
+
+.risk-highlights > div:last-child {
+  border-right: 0;
+}
+
+
+.risk-highlights span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+.risk-highlights strong {
+  color: var(--text);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .risk-slider {
+    height: 380px;
+  }
+
+
+  .risk-project-content {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  .risk-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .risk-highlights > div:nth-child(2) {
+    border-right: 0;
+  }
+
+
+  .risk-highlights > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .risk-slider {
+    height: 320px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .risk-slider-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .risk-slider-btn.prev {
+    left: 12px;
+  }
+
+
+  .risk-slider-btn.next {
+    right: 12px;
+  }
+
+
+  .risk-caption {
+    left: 18px;
+
+    bottom: 18px;
+  }
+
+
+  .risk-dots {
+    right: 18px;
+
+    bottom: 20px;
+  }
+
+
+  .risk-highlights {
+    grid-template-columns: 1fr;
+  }
+
+
+  .risk-highlights > div {
+    border-right: 0;
+
+    border-bottom: 1px solid var(--line);
+  }
+
+
+  .risk-highlights > div:last-child {
+    border-bottom: 0;
+  }
+
+}
+
+/* ==================================================
+   TRAINING & PROFESSIONAL DEVELOPMENT
+================================================== */
+
+.training-timeline {
+  position: relative;
+  margin-top: 40px;
+}
+
+
+/* Vertical timeline */
+
+.training-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 95px;
+
+  top: 0;
+
+  bottom: 0;
+
+  width: 1px;
+
+  background: rgba(124, 255, 0, 0.35);
+}
+
+
+/* Training item */
+
+.training-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 95px 1fr;
+
+  gap: 42px;
+
+  margin-bottom: 70px;
+}
+
+
+/* Year / type */
+
+.training-year {
+  padding-top: 6px;
+
+  color: var(--accent);
+
+  font-family: var(--mono);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* Main content */
+
+.training-content {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 360px;
+
+  gap: 55px;
+
+  align-items: start;
+}
+
+
+/* Timeline dot */
+
+.training-content::before {
+  content: "";
+
+  position: absolute;
+
+  left: -48px;
+
+  top: 7px;
+
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 0 5px var(--bg);
+}
+
+
+/* Status */
+
+.training-status {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--accent);
+
+  font-family: var(--mono);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* Title */
+
+.training-main h3 {
+  margin: 0 0 8px;
+
+  color: var(--text);
+
+  font-size: clamp(25px, 2.5vw, 34px);
+
+  line-height: 1.2;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* Provider */
+
+.training-provider {
+  margin: 0 0 4px;
+
+  color: var(--accent);
+
+  font-family: var(--mono);
+
+  font-size: 12px;
+}
+
+
+/* Trainer */
+
+.training-trainer {
+  margin: 0 0 22px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 11px;
+}
+
+
+.training-trainer strong {
+  color: var(--text);
+
+  font-weight: 500;
+}
+
+
+/* Description */
+
+.training-main > p:not(.training-provider):not(.training-trainer) {
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 12.5px;
+
+  line-height: 1.9;
+}
+
+
+/* Highlight */
+
+.training-highlight {
+  margin: 25px 0;
+
+  padding: 15px 18px;
+
+  border-left: 2px solid var(--accent);
+
+  background: rgba(124, 255, 0, 0.035);
+}
+
+
+.training-highlight span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+.training-highlight strong {
+  color: var(--text);
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+/* Tags */
+
+.training-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 25px;
+}
+
+
+.training-tags span {
+  padding: 7px 11px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 20px;
+
+  color: var(--muted);
+
+  font-family: var(--mono);
+
+  font-size: 10px;
+}
+
+
+/* ==================================================
+   TRAINING IMAGE SLIDER
+================================================== */
+
+.training-slider {
+  position: relative;
+
+  width: 100%;
+
+  height: 300px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+
+  border-radius: 14px;
+
+  background: #080808;
+}
+
+
+/* Slides */
+
+.training-slide {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+
+.training-slide.active {
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* Image */
+
+.training-slide img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #080808;
+}
+
+
+/* Bottom overlay */
+
+.training-slide::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.2) 32%,
+      transparent 58%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ==================================================
+   TRAINING SLIDER CAPTION
+================================================== */
+
+.training-caption {
+  position: absolute;
+
+  left: 18px;
+
+  bottom: 18px;
+
+  z-index: 3;
+}
+
+
+.training-caption span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--accent);
+
+  font-family: var(--mono);
+
+  font-size: 9px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+.training-caption p {
+  margin: 0;
+
+  color: #fff;
+
+  font-family: var(--mono);
+
+  font-size: 10px;
+}
+
+
+/* ==================================================
+   TRAINING SLIDER BUTTONS
+================================================== */
+
+.training-slider-btn {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  background: rgba(5, 5, 5, 0.75);
+
+  color: #fff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(8px);
+
+  transition: 0.25s ease;
+}
+
+
+.training-prev {
+  left: 12px;
+}
+
+
+.training-next {
+  right: 12px;
+}
+
+
+.training-slider-btn:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: #000;
+}
+
+
+/* ==================================================
+   TRAINING SLIDER DOTS
+================================================== */
+
+.training-dots {
+  position: absolute;
+
+  right: 18px;
+
+  bottom: 20px;
+
+  z-index: 6;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.training-dot {
+  width: 6px;
+
+  height: 6px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.training-dot.active {
+  width: 21px;
+
+  background: var(--accent);
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1000px) {
+
+  .training-content {
+    grid-template-columns: 1fr 300px;
+
+    gap: 35px;
+  }
+
+
+  .training-slider {
+    height: 270px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE / SMALL TABLET
+================================================== */
+
+@media (max-width: 800px) {
+
+  .training-timeline::before {
+    left: 10px;
+  }
+
+
+  .training-item {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding-left: 35px;
+  }
+
+
+  .training-year {
+    padding-left: 0;
+  }
+
+
+  .training-content {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  .training-content::before {
+    left: -30px;
+  }
+
+
+  .training-slider {
+    height: 320px;
+
+    max-width: 500px;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  .training-item {
+    margin-bottom: 55px;
+  }
+
+
+  .training-main h3 {
+    font-size: 25px;
+  }
+
+
+  .training-slider {
+    height: 280px;
+  }
+
+
+  .training-slider-btn {
+    width: 34px;
+
+    height: 34px;
+  }
+
+
+  .training-prev {
+    left: 9px;
+  }
+
+
+  .training-next {
+    right: 9px;
+  }
+
+
+  .training-caption {
+    left: 14px;
+
+    bottom: 15px;
+  }
+
+
+  .training-dots {
+    right: 14px;
+
+    bottom: 17px;
+  }
+
+}
